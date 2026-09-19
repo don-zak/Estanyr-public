@@ -20,3 +20,5 @@ restricted/
 .public-qualification-backup-*/
 
 .public-offline-fix-backup-*/
+
+*.egg-info/
