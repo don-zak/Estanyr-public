@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cognitive Genome State",
+  "type": "object",
+  "required": [
+    "genome_id",
+    "version",
+    "evidence_level",
+    "state"
+  ],
+  "properties": {
+    "genome_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_level": {
+      "type": "string",
+      "enum": [
+        "E0",
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7"
+      ]
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "identity": {},
+        "context": {},
+        "relations": {},
+        "multiscale": {},
+        "transformations": {},
+        "history": {},
+        "evidence": {},
+        "fate": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
