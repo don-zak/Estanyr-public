@@ -1,28 +1,50 @@
 # CGT Public Surface
 
-Temporary local repository representing the future PUBLIC repository.
+This repository is the public specification and interoperability surface for CGT.
 
-This repository contains only material explicitly approved for public
-disclosure.
+It is intentionally separate from the private implementation repository and
+must never be treated as a mirror, fork, history rewrite, or implementation
+export of the private CGT runtime.
 
-It is NOT the implementation repository for the Cognitive Genome core.
+## Public scope
 
-## Intended public content
+This repository may contain:
 
-- stable interfaces
-- non-sensitive schemas
-- public scientific terminology
-- synthetic examples
-- interoperability contracts
-- selected architecture documentation
+- stable public interfaces;
+- non-sensitive schemas;
+- public scientific terminology;
+- synthetic examples;
+- interoperability contracts;
+- selected abstract architecture documentation;
+- publication and versioning policy.
 
-## Forbidden content
+## Explicitly out of scope
 
-- private CGT algorithms
-- unpublished qualification logic
-- private experimental results
-- frozen sensitive target sets
-- private model weights
-- credentials
-- encryption keys
-- production secrets
+This repository must not contain:
+
+- private CGT algorithms;
+- reconstruction-capable proprietary implementation details;
+- unpublished qualification logic;
+- exact private experiment definitions;
+- private experimental results;
+- frozen sensitive target sets;
+- private model weights;
+- credentials or secrets;
+- cryptographic private keys;
+- production data.
+
+## Evidence rule
+
+CGT uses the public rule:
+
+> No capability may claim a maturity above its evidence level.
+
+The public evidence ladder is documented in `docs/EVIDENCE_LEVELS.md`.
+
+## Repository role
+
+The public repository is a specification surface. It does not imply that the
+private runtime implementation is open source.
+
+No software license is selected by this qualification bundle. A license decision
+must be made explicitly before public release.

@@ -1,17 +1,15 @@
 # CGT Evidence Levels
 
-E0 ? exploratory
+The public CGT evidence ladder is:
 
-E1 ? replicated
+- `E0` — exploratory
+- `E1` — replicated
+- `E2` — null-qualified
+- `E3` — representation-qualified
+- `E4` — cross-fit-qualified
+- `E5` — external-domain-qualified
+- `E6` — interventional/compositional
+- `E7` — temporal/history-qualified
 
-E2 ? null-qualified
-
-E3 ? representation-qualified
-
-E4 ? cross-fit-qualified
-
-E5 ? external-domain-qualified
-
-E6 ? interventional/compositional
-
-E7 ? temporal/history-qualified
+The evidence level is a maturity/qualification label. It does not by itself
+grant a capability beyond what has been explicitly demonstrated.

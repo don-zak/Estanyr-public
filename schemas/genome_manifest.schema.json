@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/genome_manifest.schema.json",
+  "title": "CGT Public Genome Manifest",
+  "description": "Public interoperability manifest contract; does not define private key-management or storage policy.",
+  "type": "object",
+  "required": [
+    "genome_id",
+    "schema_version",
+    "engine_version",
+    "state_id",
+    "parent_state_id",
+    "evidence_level",
+    "created_at"
+  ],
+  "properties": {
+    "genome_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state_id": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "parent_state_id": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        }
+      ]
+    },
+    "evidence_level": {
+      "$ref": "evidence_level.schema.json"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_hashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "crypto_profile": {
+      "type": "string"
+    },
+    "signature_b64": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+[project]
+name = "cgt-public-spec"
+version = "0.1.0"
+description = "Public CGT specification and interoperability surface"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "jsonschema>=4.23"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

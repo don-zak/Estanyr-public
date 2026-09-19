@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Cognitive Genome State",
+  "$id": "https://cgt.example/spec/genome_state.schema.json",
+  "title": "CGT Public Genome State",
+  "description": "Abstract public Cognitive Genome state contract. This is not the private runtime representation.",
   "type": "object",
   "required": [
     "genome_id",
@@ -18,25 +20,25 @@
       "minLength": 1
     },
     "evidence_level": {
-      "type": "string",
-      "enum": [
-        "E0",
-        "E1",
-        "E2",
-        "E3",
-        "E4",
-        "E5",
-        "E6",
-        "E7"
-      ]
+      "$ref": "evidence_level.schema.json"
     },
     "state": {
       "type": "object",
+      "required": [
+        "identity",
+        "context",
+        "residual_relations",
+        "multiscale_structure",
+        "transformations",
+        "history",
+        "evidence",
+        "fate"
+      ],
       "properties": {
         "identity": {},
         "context": {},
-        "relations": {},
-        "multiscale": {},
+        "residual_relations": {},
+        "multiscale_structure": {},
         "transformations": {},
         "history": {},
         "evidence": {},

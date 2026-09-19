@@ -1,0 +1,25 @@
+{
+  "genome_id": "synthetic-demo",
+  "version": "0.1",
+  "evidence_level": "E0",
+  "state": {
+    "identity": {
+      "label": "synthetic-example"
+    },
+    "context": {
+      "domain": "demonstration-only"
+    },
+    "residual_relations": [],
+    "multiscale_structure": {},
+    "transformations": [],
+    "history": [],
+    "evidence": {
+      "note": "synthetic"
+    },
+    "fate": {
+      "allowed": [
+        "remain-synthetic"
+      ]
+    }
+  }
+}

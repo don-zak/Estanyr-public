@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/evidence_level.schema.json",
   "title": "CGT Evidence Level",
+  "description": "Public CGT evidence maturity label.",
   "type": "string",
   "enum": [
     "E0",

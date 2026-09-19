@@ -16,3 +16,7 @@ keys/
 vault/
 private/
 restricted/
+
+.public-qualification-backup-*/
+
+.public-offline-fix-backup-*/
