@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/genome_conditioning.schema.json",
+  "title": "ESTANYR Public Genome Conditioning Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "mode",
+    "trainable",
+    "text_context_only",
+    "latent_genome_state",
+    "decoder_guidance",
+    "genome_schema_version",
+    "evidence_level"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "retrieval-only",
+        "structured-context",
+        "latent-adapter",
+        "cross-attention",
+        "decoder-guidance"
+      ]
+    },
+    "trainable": {
+      "type": "boolean"
+    },
+    "text_context_only": {
+      "type": "boolean"
+    },
+    "latent_genome_state": {
+      "type": "boolean"
+    },
+    "decoder_guidance": {
+      "type": "boolean"
+    },
+    "genome_schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_level": {
+      "type": "string",
+      "enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6", "E7"]
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "retrieval-only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "text_context_only": {
+            "const": true
+          },
+          "latent_genome_state": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "enum": ["latent-adapter", "cross-attention"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "latent_genome_state": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "decoder-guidance"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "decoder_guidance": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}
