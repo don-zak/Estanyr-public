@@ -1,0 +1,14 @@
+{
+  "profile_version": "0.2",
+  "model_class": "lightweight-llm",
+  "parameter_scale": {
+    "declared_band": "undisclosed",
+    "exact_parameters": null
+  },
+  "genome_conditioning": {
+    "enabled": true,
+    "public_mode": "genome-conditioned"
+  },
+  "evaluation_track": "cognitive-genome",
+  "notes": "Synthetic public example; not a disclosure of a private runtime configuration."
+}
