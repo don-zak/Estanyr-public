@@ -1,0 +1,13 @@
+{
+  "contract_version": "0.2",
+  "core_id": "synthetic-lightweight-core",
+  "model_class": "lightweight-llm",
+  "parameter_scale": "sub-1b",
+  "context_window_tokens": 8192,
+  "tokenizer_family": "synthetic-public-tokenizer",
+  "precision_modes": ["bf16", "int8", "int4"],
+  "training_stage": "base",
+  "genome_conditioning_supported": true,
+  "license_family": "undisclosed",
+  "notes": "Synthetic public example; not a declaration of the private ESTANYR implementation."
+}
