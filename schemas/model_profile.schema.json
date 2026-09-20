@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/model_profile.schema.json",
+  "title": "ESTANYR Public Model Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_version",
+    "model_class",
+    "parameter_scale",
+    "genome_conditioning",
+    "evaluation_track"
+  ],
+  "properties": {
+    "profile_version": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "model_class": {
+      "type": "string",
+      "enum": ["lightweight-llm", "small-language-model", "research-baseline"]
+    },
+    "parameter_scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_band"],
+      "properties": {
+        "declared_band": {
+          "type": "string",
+          "enum": ["sub-1b", "1b-3b", "3b-8b", "undisclosed"]
+        },
+        "exact_parameters": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        }
+      }
+    },
+    "genome_conditioning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "public_mode"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "public_mode": {
+          "type": "string",
+          "enum": ["none", "retrieval-only", "genome-conditioned"]
+        }
+      }
+    },
+    "evaluation_track": {
+      "type": "string",
+      "enum": ["base", "retrieval-baseline", "cognitive-genome"]
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  }
+}

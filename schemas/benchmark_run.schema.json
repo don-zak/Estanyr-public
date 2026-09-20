@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/benchmark_run.schema.json",
+  "title": "ESTANYR Public Benchmark Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_version",
+    "track",
+    "model_profile",
+    "task_id",
+    "measurements"
+  ],
+  "properties": {
+    "benchmark_version": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "track": {
+      "type": "string",
+      "enum": ["base", "retrieval", "genome"]
+    },
+    "model_profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "genome_schema_version": {
+      "type": ["string", "null"]
+    },
+    "evidence_level": {
+      "type": ["string", "null"],
+      "enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6", "E7", null]
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quality_score",
+        "input_tokens",
+        "output_tokens",
+        "latency_ms"
+      ],
+      "properties": {
+        "quality_score": {
+          "type": "number"
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "latency_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "peak_host_memory_mb": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "peak_accelerator_memory_mb": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "artifact_size_mb": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

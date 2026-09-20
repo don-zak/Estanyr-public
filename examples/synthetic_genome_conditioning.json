@@ -1,0 +1,11 @@
+{
+  "contract_version": "0.2",
+  "mode": "structured-context",
+  "trainable": false,
+  "text_context_only": true,
+  "latent_genome_state": false,
+  "decoder_guidance": false,
+  "genome_schema_version": "0.1",
+  "evidence_level": "E0",
+  "notes": "Synthetic public example; not a declaration of a private ESTANYR implementation."
+}
