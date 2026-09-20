@@ -1,0 +1,18 @@
+{
+  "benchmark_version": "0.2",
+  "track": "genome",
+  "model_profile": "synthetic-lightweight-demo",
+  "task_id": "synthetic-relation-task-001",
+  "genome_schema_version": "0.1",
+  "evidence_level": "E0",
+  "measurements": {
+    "quality_score": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0,
+    "peak_host_memory_mb": null,
+    "peak_accelerator_memory_mb": null,
+    "artifact_size_mb": null
+  },
+  "notes": "Synthetic schema example only; not a performance claim."
+}
