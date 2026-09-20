@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cgt.example/spec/language_core.schema.json",
+  "title": "ESTANYR Public Language Core Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "core_id",
+    "model_class",
+    "parameter_scale",
+    "context_window_tokens",
+    "tokenizer_family",
+    "precision_modes",
+    "training_stage",
+    "genome_conditioning_supported",
+    "license_family"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "core_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "model_class": {
+      "type": "string",
+      "enum": [
+        "compact-transformer",
+        "small-language-model",
+        "lightweight-llm",
+        "research-baseline"
+      ]
+    },
+    "parameter_scale": {
+      "type": "string",
+      "enum": ["sub-1b", "1b-3b", "3b-8b", "undisclosed"]
+    },
+    "context_window_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tokenizer_family": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "precision_modes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["fp32", "fp16", "bf16", "int8", "int4", "other"]
+      }
+    },
+    "training_stage": {
+      "type": "string",
+      "enum": ["base", "instruction-tuned", "research-custom"]
+    },
+    "genome_conditioning_supported": {
+      "type": "boolean"
+    },
+    "license_family": {
+      "type": "string",
+      "enum": [
+        "apache-2.0",
+        "mit",
+        "bsd",
+        "model-specific",
+        "research-only",
+        "undisclosed"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}
